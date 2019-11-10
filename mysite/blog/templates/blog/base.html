@@ -2,20 +2,71 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title> 
-      {% block title %}
-      {% endblock %}
-  </title>
-  <link href="{% static "css/blog.css" %}" rel="stylesheet">
+  {% block title%}
+  {% endblock%}
+<link  href="{% static "css/blog.css" %}" rel="stylesheet"> 
 </head>
 <body>
-  <div id="content">
-    {% block content %}
-    {% endblock %}
+
+  <div class='header'>
+    <h1> Мой первый проект на Django </h1>
+    <p>Создание проекта блога с шаблонами HTML5 и стилистикой CSS.</p>
   </div>
-  <div id="sidebar">
-    <h2>My blog</h2>
-      <p>This is my blog.</p>
+
+  <div class='topnav'>
+    <li><a href='https://onliner.by'> Onliner.by </a></li>
+      <li><a href=""class ='down'> Руководства по вёрстке </a>
+        <ul class="submenu">
+          <li><a href="https://developer.mozilla.org/ru/docs/Web/CSS">Руководство по CSS от Mozilla </a></li>
+          <li><a href="https://developer.mozilla.org/ru/docs/Web/HTML">Руководство по HTML5 от Mozilla</a></li>
+          <li><a href="https://html5book.ru/css3-animation/">CSS3 - анимация</a></li>
+        </ul>
+      </li>
+    <li><a href=""class ='down'> Руководство по Django </a>
+      <ul class="submenu">
+        <li><a href="https://django.fun/en/cbv/Django/2.2/django.views.generic.base/View/">Документация по Django</a></li>
+        <li><a href="https://ru.stackoverflow.com">Stackoverflow - обратиться за помощью</a></li>
+        <li><a href="https://developer.mozilla.org/ru/docs/Web/HTTP">Руководство по HTTP от Mozilla</a></li>
+      </ul>
+    </li>
   </div>
+
+  <div class="row"> 
+    <div class="leftcolumn">
+      <div class="card">
+        <p>
+          {% block content %} 
+          {% endblock %}
+        </p>
+      </div>
+    </div>
+    
+  
+
+    <div class="rightcolumn">
+      <div class="card">
+        <h2>Обо мне</h2>
+        <div class="fakeimg" style="height:100px;"> Вставить изображение</div>
+        <p>Краткая информация</p>
+    </div>
+    
+    <div class="card">
+        <h3>Популярные статьи</h3>
+        <div class="fakeimg"><p>Изображение</p></div>
+        <div class="fakeimg"><p>Изображение</p></div>
+        <div class="fakeimg"><p>Изображение</p></div>
+    </div>
+      
+    <div class="card">
+        <h3>Follow Me</h3>
+        <p>Some text..</p>
+      </div>
+    </div>
+  </div>
+    
+  <div id='footer'>
+    <h2> Все права очень защищены (с) </h2>
+  </div>    
+
 </body>
 </html>
